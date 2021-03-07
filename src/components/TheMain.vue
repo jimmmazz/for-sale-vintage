@@ -3,7 +3,7 @@
     <main>
       <div v-if="catTitle !== 'home'">
         <h1 class="category-title">{{ catTitle }}</h1>
-        <BaseCard v-if="catTitle.length > 0" v-bind:items="itemsToShow" />
+        <BaseCard v-bind:items="itemsToShow" />
       </div>
       <div v-else>
         <Home />

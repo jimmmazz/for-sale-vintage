@@ -11,6 +11,9 @@ import ItemForm from './components/ItemForm';
 
 export default {
   name: 'App',
+  // provide: {
+  //   showItem: false,
+  // },
   data() {
     return {
       catTitle: 'home',

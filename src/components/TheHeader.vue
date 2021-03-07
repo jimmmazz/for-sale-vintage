@@ -33,6 +33,7 @@
 <script>
 export default {
   emits: ['catName', 'log-in'],
+  // inject: ['showItem'],
   data() {
     return {
       sets: "Set's",

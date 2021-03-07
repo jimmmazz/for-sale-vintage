@@ -1,7 +1,7 @@
 <template>
   <BaseModal
+    v-if="itemToShow.length"
     :itemToShow="itemToShow"
-    v-if="showItem"
     @close-modal="closeModal"
   />
   <div v-else class="card-container">
@@ -25,25 +25,28 @@
 import BaseModal from './BaseModal';
 
 export default {
+  // inject: ['showItem'],
   components: {
     BaseModal,
   },
   props: ['items'],
   data() {
     return {
+      // displayItem: this.showItem,
       itemToShow: [],
-      showItem: false,
     };
   },
   methods: {
     getAllPics(id) {
       this.itemToShow = this.items.filter(item => item.id === id);
       console.log(this.itemToShow);
-      this.showItem = true;
+      // console.log(this.showItem);
+      // this.showItem = true;
+      // console.log(this.showItem);
     },
     closeModal() {
       this.itemToShow = [];
-      this.showItem = false;
+      // this.showItem = false;
     },
   },
 };
