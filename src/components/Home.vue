@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <h1 class="heading">Welcome to our warehouse !</h1>
-    <div class="flexContainer">
+    <div class="flex-container">
       <img src="/photos/red.jpg" alt="red" />
       <p class="intro">
         Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -39,7 +39,7 @@ export default {
   margin: 3rem 2rem 1rem;
 }
 
-.flexContainer {
+.flex-container {
   margin: 0 2rem;
   max-width: 100%;
   display: flex;
@@ -62,7 +62,7 @@ img {
   margin-left: 2rem;
   margin-top: 1rem;
   display: flex;
-  justify-content: start;
+  justify-content: center;
 }
 .name {
   margin-right: 0.5em;
@@ -73,5 +73,20 @@ span {
   font-size: 1.1em;
   color: rgb(190, 54, 20);
   font-weight: 600;
+}
+
+@media (max-width: 550px) {
+  .heading {
+    text-align: center;
+  }
+
+  .flex-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  img {
+    margin-bottom: 1rem;
+  }
 }
 </style>

@@ -1,10 +1,10 @@
 <template>
   <BaseModal
     :itemToShow="itemToShow"
-    v-if="itemToShow.length > 0"
+    v-if="showItem"
     @close-modal="closeModal"
   />
-  <div class="card-container">
+  <div v-else class="card-container">
     <div
       v-for="item in items"
       :key="item.id"
@@ -32,22 +32,26 @@ export default {
   data() {
     return {
       itemToShow: [],
+      showItem: false,
     };
   },
   methods: {
     getAllPics(id) {
       this.itemToShow = this.items.filter(item => item.id === id);
       console.log(this.itemToShow);
+      this.showItem = true;
     },
     closeModal() {
       this.itemToShow = [];
+      this.showItem = false;
     },
   },
 };
 </script>
 
-<style>
+<style scoped>
 .card-container {
+  width: 100%;
   padding: 1rem;
   display: flex;
   flex-direction: row;
@@ -96,5 +100,16 @@ img {
 
 .price {
   font-size: 0.8rem;
+}
+
+@media (max-width: 550px) {
+  .card-container {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .card {
+    max-width: 300px;
+  }
 }
 </style>

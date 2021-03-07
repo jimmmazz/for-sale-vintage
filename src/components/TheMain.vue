@@ -38,12 +38,25 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .category-title {
   margin: 3rem 2rem 1rem;
   text-transform: uppercase;
   font-weight: 300;
   font-family: 'Roboto', sans-serif;
   color: #333;
+}
+
+@media (max-width: 550px) {
+  div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .category-title {
+    margin: 1rem 2rem 1rem;
+    text-align: center;
+  }
 }
 </style>

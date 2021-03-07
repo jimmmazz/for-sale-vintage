@@ -46,23 +46,15 @@ export default {
 
 <style scoped>
 .btn {
-  color: white;
-}
-.modal-container {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.8);
-  height: 100vh;
-  width: 100vw;
+  font-size: 1.1rem;
+  color: rgb(255, 228, 221);
+  padding: 5px 15px;
 }
 
 .modal-heading {
   z-index: 10;
-  color: #ccc;
-  /* margin: 1rem 10%; */
+  color: #333;
+  font-size: 1.75rem;
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
 }
@@ -73,19 +65,8 @@ export default {
   justify-content: space-between;
 }
 
-.modal {
-  position: absolute;
-  width: 90%;
-  padding: 1rem;
-  left: 50px;
-  right: 50px;
-  top: 50px;
-  bottom: 50px;
-  background-color: rgba(200, 200, 200, 0.5);
-}
-
 .descLong {
-  color: #ccc;
+  color: #666;
   line-height: 1.5;
   margin: 1rem 10%;
 }
@@ -93,6 +74,7 @@ export default {
 .images {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .imgLarge {
@@ -100,11 +82,46 @@ export default {
   width: 80%;
   height: 500px;
   object-fit: cover;
+  box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.15);
 }
 
 .thumbs {
   margin: 1rem;
   width: 100px;
   height: 100px;
+}
+
+@media (max-width: 420px) {
+  .btn {
+    font-size: 1.25rem;
+    color: #fff ;
+  }
+
+  .modal {
+    background-color: #999;
+  }
+  .modal-header {
+    margin: 1em 5% 1rem;
+  }
+
+  .modal-heading {
+    font-size: 1.25rem;
+  }
+
+  .descLong {
+    color: #fff;
+  }
+
+  .imgLarge,
+  .thumbs {
+    width: 90%;
+    height: 400px;
+  }
+
+  .thumbs {
+    margin: auto;
+    object-fit: cover;
+    box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.15);
+  }
 }
 </style>

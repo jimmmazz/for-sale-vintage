@@ -25,11 +25,6 @@
             Table's
           </button>
         </li>
-        <li class="list-item">
-          <button v-on:click="login" class="btn">
-            Login
-          </button>
-        </li>
       </ul>
     </header>
   </div>
@@ -64,12 +59,13 @@ export default {
 header,
 .list {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
   padding: 0.5em 1em 0.5em;
 }
 
 header {
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
   box-shadow: 2px 2px 40px rgba(221, 221, 221, 0.2);
 }
 
@@ -98,5 +94,15 @@ header {
   color: rgb(190, 54, 20);
   font-family: 'Cinzel', serif;
   font-weight: 600;
+}
+
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+  }
+
+  .list {
+    justify-content: space-around;
+  }
 }
 </style>
