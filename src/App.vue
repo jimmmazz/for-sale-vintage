@@ -1,26 +1,62 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Welcome to Your Vue.js App" />
+  <TheHeader @cat-name="category" @log-in="loggedIn" />
+  <TheMain :catTitle="catTitle" />
+  <ItemForm v-if="isLoggedIn" />
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+import TheHeader from './components/TheHeader';
+import TheMain from './components/TheMain';
+import ItemForm from './components/ItemForm';
 
 export default {
-  name: "App",
+  name: 'App',
+  data() {
+    return {
+      catTitle: '',
+      isLoggedIn: false,
+    };
+  },
   components: {
-    HelloWorld
-  }
+    TheHeader,
+    TheMain,
+    ItemForm,
+  },
+  methods: {
+    category(value) {
+      this.catTitle = value;
+    },
+    loggedIn(value) {
+      console.log(value);
+      this.isLoggedIn = value.isLoggedIn;
+    },
+  },
 };
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Roboto:wght@300;400&display=swap');
+
+body {
+  background: linear-gradient(45deg, transparent, rgba(0, 0, 0, 0.75));
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.btn {
+  padding: 3px 12px;
+  border-radius: 2px;
+  border: none;
+  background-color: transparent;
+  color: #999;
+  transition: 300ms ease;
+}
+
+.btn:hover {
+  background-color: rgba(221, 221, 221, 0.2);
+  color: #333;
 }
 </style>
