@@ -13,7 +13,7 @@ export default {
   name: 'App',
   data() {
     return {
-      catTitle: '',
+      catTitle: 'home',
       isLoggedIn: false,
     };
   },
@@ -38,7 +38,7 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Roboto:wght@300;400&display=swap');
 
 body {
-  background: linear-gradient(45deg, transparent, rgba(0, 0, 0, 0.75));
+  background: linear-gradient(45deg, transparent, rgba(0, 0, 0, 0.5));
 }
 
 .container {
@@ -51,7 +51,7 @@ body {
   border-radius: 2px;
   border: none;
   background-color: transparent;
-  color: #999;
+  color: #ddd;
   transition: 300ms ease;
 }
 

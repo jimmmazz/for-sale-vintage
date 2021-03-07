@@ -6,6 +6,11 @@
       </h1>
       <ul class="list">
         <li class="list-item">
+          <button v-on:click="catName(home)" class="btn">
+            Home
+          </button>
+        </li>
+        <li class="list-item">
           <button v-on:click="catName(sets)" class="btn">
             Set's
           </button>
@@ -38,6 +43,7 @@ export default {
       sets: "Set's",
       chairs: "Chair's",
       tables: "Table's",
+      home: 'home',
       isLoggedIn: false,
     };
   },
